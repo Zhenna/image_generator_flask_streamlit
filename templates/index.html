@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text-To-Image Generator</title>
+</head>
+
+<body>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .myButton {
+            border: none;
+            background-color: grey;
+            color: snow;
+            padding: 10px 22px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .myDiv {
+            border: none;
+            background-color: none;
+            text-align: center;
+        }
+
+        body {
+            background-color: snow;
+            font-family: Arial, Helvetica, sans-serif, 'Times New Roman', Times, serif;
+            color: black
+        }
+    </style>
+
+    <h1>Text-to-image Web App</h1>
+    <h3>Powered by Hugging Face</h3>
+    <br>
+
+
+    <!-- <form action="/loading" method="post"> -->
+    <form action="/index_response" method="post">
+        <div class="myDiv">
+            <p>Enter your text prompt below and click the button to submit.</p>
+            <textarea name="user_input" rows="3" cols="50" style="font-size: 16pt"></textarea>
+        </div>
+        <br>
+
+        <div class="myDiv">
+            <label for="models">Select model (in order of processing time)</label>
+            <select name="models" id="models">
+                <option value="nota-ai/bk-sdm-small">nota-ai/bk-sdm-small</option>
+                <option value="CompVis/stable-diffusion-v1-4">CompVis/stable-diffusion-v1-4</option>
+                <option value="runwayml/stable-diffusion-v1-5">runwayml/stable-diffusion-v1-5</option>
+                <option value="prompthero/openjourney">prompthero/openjourney</option>
+                <option value="hakurei/waifu-diffusion">hakurei/waifu-diffusion</option>
+                <option value="stabilityai/stable-diffusion-2-1">stabilityai/stable-diffusion-2-1</option>
+                <option value="dreamlike-art/dreamlike-photoreal-2.0">dreamlike-art/dreamlike-photoreal-2.0</option>
+            </select>
+        </div>
+        <br>
+
+        <div class="myDiv">
+            <button class="myButton">Submit text prompt</button>
+        </div>
+    </form>
+    <br>
+
+</body>

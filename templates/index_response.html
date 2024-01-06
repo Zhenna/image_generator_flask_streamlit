@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text-To-Image Generator</title>
+</head>
+
+<body>
+
+    <style>
+        .flash {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .flash.success {
+            background-color: none;
+            color: grey;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .myButton {
+            border: none;
+            background-color: grey;
+            color: snow;
+            padding: 10px 22px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .myDiv {
+            border: none;
+            background-color: none;
+            text-align: center;
+        }
+
+        body {
+            background-color: snow;
+            font-family: Arial, Helvetica, sans-serif, 'Times New Roman', Times, serif;
+            color: black
+        }
+    </style>
+
+    <h1>Text-to-image Web App</h1>
+    <h3>Powered by Hugging Face</h3>
+
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+    <div class="flash {{ category }}">{{ message }}</div>
+    {% endfor %}
+    <br>
+
+    <div>
+        <img src="{{ image_url }}" />
+        <form method="get" action="/download">
+            <button class="myButton">Click here to download</button>
+        </form>
+    </div>
+</body>
