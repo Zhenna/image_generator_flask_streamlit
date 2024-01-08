@@ -1,4 +1,3 @@
-import os
 import streamlit as st
 from inference import text2image
 from io import BytesIO
@@ -39,7 +38,7 @@ def app():
             minutes, seconds = divmod(rem, 60)
 
             st.success(
-                "Prcoessing time: {:0>2}:{:0>2}:{:05.2f}.".format(
+                "Processing time: {:0>2}:{:0>2}:{:05.2f}.".format(
                     int(hours), int(minutes), seconds
                 )
             )
